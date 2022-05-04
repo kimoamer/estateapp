@@ -1,0 +1,18 @@
+include MANIFEST.in
+include requirements.txt
+include *.json
+include *.md
+include *.py
+include *.txt
+recursive-include estateapp *.css
+recursive-include estateapp *.csv
+recursive-include estateapp *.html
+recursive-include estateapp *.ico
+recursive-include estateapp *.js
+recursive-include estateapp *.json
+recursive-include estateapp *.md
+recursive-include estateapp *.png
+recursive-include estateapp *.py
+recursive-include estateapp *.svg
+recursive-include estateapp *.txt
+recursive-exclude estateapp *.pyc
