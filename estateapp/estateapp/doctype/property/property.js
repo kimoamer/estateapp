@@ -11,7 +11,7 @@ frappe.ui.form.on('Property', {
             frappe.msgprint(row.amenity);
             row.amenity = '';
             row.amenity_price = 0;
-            frm.refresh_field('amenities');
+            row.discount = 0;
             frm.refresh_field('amenities');
           }
         }
