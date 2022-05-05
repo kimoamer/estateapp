@@ -18,20 +18,17 @@ frappe.ui.form.on('Property', {
       });
     },
     frm.compute_total = function (frm) {
-      let total = 0;
-      let total_dis = 0;
-      frm.doc.amenities.forEach(item => {
-        total = total + item.amenity_price;
-        total_dis = total_dis + item.discount;
-      });
-      let final_total = frm.doc.property_price + total;
-      let final_dis = frm.doc.discount + total_dis;
-      console.log(final_total);
-      if(final_dis>0){
-        final_total = final_total - (final_total * (final_dis/100));
+      let total = frm.doc.property_price;
+      if (frm.doc.discount && frm.doc.discount > 0){
+        total = frm.doc.property_price - (frm.doc.property_price*(frm.doc.discount/100));
       }
-      console.log(final_dis);
-      frm.set_value("grand_total", final_total);
+      if (frm.doc.amenities){
+        frm.doc.amenities.forEach(item => {
+          let amenity_price = item.amenity_price - (item.amenity_price*(item.discount/100));
+          total = total + amenity_price;
+        });
+      }
+      frm.set_value("grand_total", total);
       frm.refresh_field("grand_total");
     }
 

@@ -31,7 +31,7 @@ app_license = "MIT"
 # page_js = {"page" : "public/js/file.js"}
 
 # include js in doctype views
-doctype_js = {"Property" : "public/js/doctype_plugins/claim.js"}
+# doctype_js = {"Property" : "public/js/doctype_plugins/claim.js"}
 # doctype_list_js = {"doctype" : "public/js/doctype_list.js"}
 # doctype_tree_js = {"doctype" : "public/js/doctype_tree.js"}
 # doctype_calendar_js = {"doctype" : "public/js/doctype_calendar.js"}
@@ -95,13 +95,17 @@ doctype_js = {"Property" : "public/js/doctype_plugins/claim.js"}
 # ---------------
 # Hook on document methods and events
 
-# doc_events = {
-# 	"*": {
-# 		"on_update": "method",
-# 		"on_cancel": "method",
-# 		"on_trash": "method"
-#	}
-# }
+doc_events = {
+	# "*": {
+	# 	"on_update": "method",
+	# 	"on_cancel": "method",
+	# 	"on_trash": "method"
+	# }
+	"Property": {
+	"on_update":"estateapp.estateapp.doctype.property.event.on_update",
+	"after_insert":"estateapp.estateapp.doctype.property.event.after_insert"
+	}
+}
 
 # Scheduled Tasks
 # ---------------

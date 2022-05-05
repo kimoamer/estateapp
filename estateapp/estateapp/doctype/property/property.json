@@ -112,12 +112,13 @@
   {
    "fieldname": "grand_total",
    "fieldtype": "Currency",
-   "label": "Grand Total"
+   "label": "Grand Total",
+   "read_only": 1
   }
  ],
  "index_web_pages_for_search": 1,
  "links": [],
- "modified": "2022-05-03 21:15:03.189694",
+ "modified": "2022-05-05 15:33:54.547758",
  "modified_by": "Administrator",
  "module": "Estateapp",
  "name": "Property",
