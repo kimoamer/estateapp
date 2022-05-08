@@ -27,6 +27,7 @@
    "fieldtype": "Currency",
    "in_list_view": 1,
    "label": "Amenity Price",
+   "precision": "2",
    "reqd": 1
   },
   {
@@ -39,7 +40,7 @@
  ],
  "index_web_pages_for_search": 1,
  "links": [],
- "modified": "2022-05-04 12:52:29.146578",
+ "modified": "2022-05-08 02:33:01.899808",
  "modified_by": "Administrator",
  "module": "Estateapp",
  "name": "Property Amenity Item",
