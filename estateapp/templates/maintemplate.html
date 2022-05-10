@@ -17,7 +17,7 @@
   <link href="https://fonts.googleapis.com/css?family=Poppins:300,400,500,600,700" rel="stylesheet">
 
   <!-- Vendor CSS Files -->
-  <link type="text/css" rel="stylesheet" href="/assets/frappe/dist/css/desk.bundle.WROJS2KZ.css"><link type="text/css" rel="stylesheet" href="/assets/frappe/dist/css/report.bundle.EAO4KGW6.css">
+  <!-- <link type="text/css" rel="stylesheet" href="/assets/frappe/dist/css/desk.bundle.WROJS2KZ.css"><link type="text/css" rel="stylesheet" href="/assets/frappe/dist/css/report.bundle.EAO4KGW6.css"> -->
   <link href="/assets/estateapp/assets/vendor/animate.css/animate.min.css" rel="stylesheet">
   <link href="/assets/estateapp/assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
   <link href="/assets/estateapp/assets/vendor/bootstrap-icons/bootstrap-icons.css" rel="stylesheet">
@@ -33,9 +33,9 @@
 		frappe.ready = function(fn) {
 			frappe.ready_events.push(fn);
 		}
-		window.dev_server = 0;
-		window.socketio_port = 9000;
-		window.show_language_picker = false;
+		window.dev_server = {{ dev_server }};
+		window.socketio_port = {{ (frappe.socketio_port or 'null') }};
+		window.show_language_picker = {{ show_language_picker or 'false' }};
 	</script>
 </head>
 
@@ -370,7 +370,6 @@
       <script type="text/javascript" src="/assets/frappe/dist/js/controls.bundle.YRPCSOXF.js"></script>
       <script type="text/javascript" src="/assets/frappe/dist/js/report.bundle.74MDY7FP.js"></script>
       <script type="text/javascript" src="/assets/frappe/dist/js/frappe-web.bundle.RZQT2Y7N.js"></script>
-      <script type="text/javascript" src="/website_script.js"></script>
       <script>frappe.csrf_token = "{{frappe.session.csrf_token}}";</script>
     </body>
 
