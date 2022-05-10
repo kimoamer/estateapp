@@ -1,4 +1,5 @@
 from . import __version__ as app_version
+from route import routes
 
 app_name = "estateapp"
 app_title = "Estateapp"
@@ -46,6 +47,8 @@ app_license = "MIT"
 # role_home_page = {
 #	"Role": "home_page"
 # }
+
+website_route_rules = routes
 
 # Generators
 # ----------
